@@ -8,27 +8,14 @@ import com.pacientes.controller.IsExistsException;
 import com.pacientes.controller.PacienteController;
 import com.pacientes.util.Constant;
 import com.pacientes.util.Util;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Nestor_Velasquez
  */
-public class Mantenimiento extends javax.swing.JApplet implements Constant{
+public class Mantenimiento extends JAppletConFondo implements Constant{
 
-    Image fondo;
-
-    @Override
-    public void paint(Graphics grphcs) {
-        this.getGraphics().drawImage(Toolkit.getDefaultToolkit().getImage(RESOURCES_URL+"Background.jpg"),0,0,null);        
-    }
-    
-    
     @Override
     public void init() {
         /* Set the Nimbus look and feel */
@@ -56,11 +43,11 @@ public class Mantenimiento extends javax.swing.JApplet implements Constant{
 
         /* Create and display the applet */
         
-        this.getGraphics().drawImage(Toolkit.getDefaultToolkit().getImage(RESOURCES_URL+"Background.jpg"),0,0,null);
         try {
             java.awt.EventQueue.invokeAndWait(new Runnable() {
                 public void run() {
-                    initComponents();                    
+                    initComponents();
+                    setImagen(RESOURCES_URL+"Background.jpg");
                 }
             });
         } catch (Exception ex) {
@@ -77,92 +64,111 @@ public class Mantenimiento extends javax.swing.JApplet implements Constant{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        mensajeErrorLb = new javax.swing.JLabel();
-        edadPacienteFtf = new javax.swing.JFormattedTextField();
-        apellidoPacienteTf = new javax.swing.JTextField();
-        nombrePacienteTf = new javax.swing.JTextField();
-        nombrePacientelb = new javax.swing.JLabel();
-        apellidoPacientelb = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         edadPacientelb = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        apellidoPacientelb = new javax.swing.JLabel();
+        nombrePacientelb = new javax.swing.JLabel();
+        nombrePacienteTf = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        apellidoPacienteTf = new javax.swing.JTextField();
+        mensajeErrorLb = new javax.swing.JLabel();
+        edadPacienteFtf = new javax.swing.JFormattedTextField();
+
+        jPanel1.setOpaque(false);
+
+        edadPacientelb.setForeground(Constant.FONT_COLOR);
+        edadPacientelb.setText("Edad");
+
+        jLabel1.setFont(Constant.TITLE_FONT);
+        jLabel1.setForeground(Constant.FONT_COLOR);
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Crear Paciente");
+
+        apellidoPacientelb.setForeground(Constant.FONT_COLOR);
+        apellidoPacientelb.setText("Apellido");
+
+        nombrePacientelb.setForeground(Constant.FONT_COLOR);
+        nombrePacientelb.setText("Nombre");
 
         jButton1.setText("Guardar");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         mensajeErrorLb.setForeground(new java.awt.Color(255, 0, 0));
         mensajeErrorLb.setText("jLabel2");
 
-        nombrePacientelb.setText("Nombre");
-
-        apellidoPacientelb.setText("Apellido");
-
-        edadPacientelb.setText("Edad");
-
-        jLabel1.setFont(Constant.TITLE_FONT);
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Crear Paciente");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton1)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(edadPacienteFtf)
-                                .addComponent(apellidoPacienteTf)
-                                .addComponent(nombrePacienteTf, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(nombrePacientelb)
-                                .addComponent(edadPacientelb)
-                                .addComponent(apellidoPacientelb))))
-                    .addComponent(mensajeErrorLb)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jButton1)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(edadPacienteFtf)
+                                        .addComponent(apellidoPacienteTf)
+                                        .addComponent(nombrePacienteTf, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(nombrePacientelb)
+                                        .addComponent(edadPacientelb)
+                                        .addComponent(apellidoPacientelb))))
+                            .addComponent(mensajeErrorLb))
+                        .addGap(0, 163, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 11, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nombrePacienteTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nombrePacientelb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(apellidoPacienteTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(apellidoPacientelb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(edadPacienteFtf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(edadPacientelb))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mensajeErrorLb)
-                .addContainerGap(194, Short.MAX_VALUE))
+                .addComponent(mensajeErrorLb))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(183, 183, 183))
         );
     }// </editor-fold>//GEN-END:initComponents
-
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         String nombre = nombrePacienteTf.getText(); 
         String apellido = apellidoPacienteTf.getText();
         String edad = edadPacienteFtf.getText();
+        
+        int option = 0;
         
         if(nombre.isEmpty()){
             mensajeErrorLb.setText("Favor ingresar un nombre");            
@@ -175,17 +181,27 @@ public class Mantenimiento extends javax.swing.JApplet implements Constant{
         }else {
             try {
                 PacienteController.crearPaciente(nombre, apellido, edad);
-                mensajeErrorLb.setText("Paciente guardado");
+                option = JOptionPane.showConfirmDialog(this, "Desea guardar otro?","Paciente Guardado",JOptionPane.YES_NO_OPTION);
+                if(option==0){
+                    cleanComponents();
+                }else{
+                    this.jPanel1.setVisible(false);
+                }
+                
             } catch (IsExistsException ex) {
-                mensajeErrorLb.setText(ex.getMessage());
+                JOptionPane.showMessageDialog(this,ex.getMessage(),"Error", JOptionPane.ERROR_MESSAGE);
             }
+        }
+        if(!mensajeErrorLb.getText().isEmpty()){
+            mensajeErrorLb.setVisible(true);
         }
     }//GEN-LAST:event_jButton1MouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+    private void cleanComponents(){
+        nombrePacienteTf.setText("");
+        apellidoPacienteTf.setText("");
+        edadPacienteFtf.setText("");
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField apellidoPacienteTf;
@@ -194,6 +210,7 @@ public class Mantenimiento extends javax.swing.JApplet implements Constant{
     private javax.swing.JLabel edadPacientelb;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel mensajeErrorLb;
     private javax.swing.JTextField nombrePacienteTf;
     private javax.swing.JLabel nombrePacientelb;
