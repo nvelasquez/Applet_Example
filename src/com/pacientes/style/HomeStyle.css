@@ -1,0 +1,26 @@
+/* 
+    Document   : HomeStyle
+    Created on : Jan 21, 2013, 7:14:39 PM
+    Author     : Nestor_Velasquez
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+#TitleDiv {
+    background-color: aqua;
+    font-family: serif;
+    font-size: 30;
+    font-style: italic;
+    text-align: center;
+    border-style: groove;
+    margin-bottom: 10;
+}
+#contentDiv{
+    width: 500;
+    height: 500;
+    text-align: center;
+}
+
